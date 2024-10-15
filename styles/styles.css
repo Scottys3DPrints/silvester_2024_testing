@@ -321,12 +321,20 @@ main {
 }
 
 .team-gallery {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjusts the space between the items */
+    gap: 24px; /* Adds spacing between items */
     width: 95%;
-    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
-    grid-gap: 24px;
     margin: 2rem auto 1rem auto;
+    justify-content: center;
 }
+
+.team-gallery > * {
+    flex: 1 1 125px; /* Flex-grow: 1, flex-shrink: 1, minimum size: 125px */
+    max-width: 150px; 
+}
+
 
 .teamgallerylower {
     max-width: 1200px;
@@ -481,9 +489,11 @@ daily-comments p {
         grid-template-columns: 1fr 1fr;
     }
 
-    .team-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .team-gallery > * {
+        flex: 1 1 225px; /* Flex-grow: 1, flex-shrink: 1, minimum size: 200px */
+        max-width: 225px;
     }
+
 
     .quote-image {
         width: 60%;
